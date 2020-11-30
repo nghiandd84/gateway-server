@@ -14,3 +14,12 @@ eureka:
     serviceUrl:
       defaultZone: ${EUREKA_URL:http://user:password@localhost:5000}/eureka/
 
+zuul:
+  host:
+    connect-timeout-millis: 50000
+    socket-timeout-millis: 50000
+  routes:
+    demo-service:
+      path: /demo/**
+      serviceId: dn-demo-service
+      stripPrefix: true
