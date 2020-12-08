@@ -23,3 +23,7 @@ zuul:
       path: /demo/**
       serviceId: dn-demo-service
       stripPrefix: true
+    admin-server:
+      path: /admin-server/**
+      serviceId: admin-service
+      stripPrefix: true
