@@ -1,5 +1,5 @@
 server:
-  port: ${PORT:5001}
+  port: ${PORT:8888}
 
 spring:
   application:
@@ -22,6 +22,10 @@ zuul:
     demo-service:
       path: /demo/**
       serviceId: dn-demo-service
+      stripPrefix: true
+    user-service:
+      path: /user-service/**
+      serviceId: dn-user-service
       stripPrefix: true
     admin-server:
       path: /admin-server/**
