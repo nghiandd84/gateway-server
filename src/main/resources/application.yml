@@ -3,11 +3,12 @@ server:
 
 spring:
   application:
-    name: gateway-service
+    name: GATEWAY-SERVICE
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: ${DOMAIN_NAME:localhost}
+    nonSecurePort: ${PORT_NON_SECURE:5002}
   client:
     registerWithEureka: true
     fetchRegistry: true
@@ -25,9 +26,11 @@ zuul:
       stripPrefix: true
     user-service:
       path: /user-service/**
-      serviceId: dn-user-service
+      serviceId: DN-USER-SERVICE
       stripPrefix: true
     admin-server:
       path: /admin-server/**
-      serviceId: admin-service
+      serviceId: ADMIN-SERVICE
       stripPrefix: true
+
+
